@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         configureLogoutButton();
 
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         String current_email = spManager.getEmail(this);
         String current_password = spManager.getPassword(this);
         if (current_password == null && current_email == null) {
@@ -35,22 +34,23 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             TextView txt_email = (TextView) findViewById(R.id.text_email);
-            txt_email.append(current_email);
+            txt_email.setText("E-mail: " + current_email);
             TextView txt_password = (TextView) findViewById(R.id.text_password);
-            txt_password.append(current_password);
+            txt_password.setText("Password: " + current_password);
         }
     }
 
     private void configureLogoutButton() {
         final Button logoutButton = (Button) findViewById(R.id.button_logout);
+        final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                spManager.removeData(view.getContext());
-                TextView ttxt = (TextView) findViewById(R.id.text_email);
-                ttxt.clearComposingText();
-                TextView passw = (TextView) findViewById(R.id.text_password);
-                passw.clearComposingText();
+                //spManager.removeData(this);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.remove("email");
+                editor.remove("password");
+                editor.commit();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivityForResult(intent, LOG_IN_REQUEST);
             }
@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 EMAIL = data.getStringExtra("email");
                 PASSWORD = data.getStringExtra("password");
                 TextView ttxt = (TextView) findViewById(R.id.text_email);
-                ttxt.append(EMAIL);
+                ttxt.setText("E-mail: " + EMAIL);
                 TextView passw = (TextView) findViewById(R.id.text_password);
-                passw.append(PASSWORD);
+                passw.setText("Password: " + PASSWORD);
                 spManager.addData(this, EMAIL, PASSWORD);
             }
         }

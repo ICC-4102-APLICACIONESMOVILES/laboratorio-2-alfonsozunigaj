@@ -26,7 +26,7 @@ public class SPManager {
         return current_password;
     }
 
-    public void removeData(Context activity) {
+    public void removeData(Activity activity) {
         SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.remove("email");
