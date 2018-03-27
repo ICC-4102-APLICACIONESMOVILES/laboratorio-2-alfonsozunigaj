@@ -17,4 +17,19 @@
         completions."
     </string>
     <string name="log_out">Log Out</string>
+
+    <string-array name="Info">
+        <item>Alfonso</item>
+        <item>05/07/1996</item>
+        <item>Computacion</item>
+        <item>Sin comentarios</item>
+        <item>Jose</item>
+        <item>14/03/1993</item>
+        <item>Comercial</item>
+        <item>No hay comentarios</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
