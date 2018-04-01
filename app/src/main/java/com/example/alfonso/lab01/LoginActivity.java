@@ -186,7 +186,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // form field with an error.
             focusView.requestFocus();
             Context context = getApplicationContext();
-            CharSequence text = "Datos mal ingresados";
+            CharSequence text = "Invalid Input";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
@@ -194,7 +194,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             Context context = getApplicationContext();
-            CharSequence text = "Datos bien ingresados";
+            CharSequence text = "Log In Successful";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();

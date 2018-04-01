@@ -3,15 +3,26 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_form"
-            android:title="Go to Form" />
+            android:icon="@drawable/ic_insert_drive_file_black"
+            android:title="@string/form" />
         <item
-            android:id="@+id/nav_option2"
-            android:title="Option 2" />
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_format_list_bulleted_black"
+            android:title="@string/list" />
         <item
-            android:id="@+id/nav_option3"
-            android:title="Option 3" />
+            android:id="@+id/nav_resume"
+            android:icon="@drawable/ic_assignment_black"
+            android:title="@string/resume" />
         <item
-            android:id="@+id/nav_option4"
-            android:title="Option 4" />
+            android:id="@+id/nav_credentials"
+            android:icon="@drawable/ic_account_circle_black"
+            android:title="@string/my_account" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_exit_to_app"
+            android:title="@string/log_out" />
     </group>
 </menu>
